@@ -1,0 +1,31 @@
+Introduction
+A Multiplexer (MUX) is a digital circuit that selects one of several input signals and forwards the selected input to a single output line. It is a fundamental component in digital electronics used for routing data from multiple sources. In this example, we will use Verilog to implement a simple 2-to-1 multiplexer that selects between two 4-bit inputs based on a select signal.
+
+The provided Verilog code demonstrates a 2-to-1 multiplexer that takes two 4-bit inputs (x and y) and a 1-bit select signal (s). The selected input is routed to the output (m), and the LEDs are set to zero.
+
+----------------------------------------------Code Explanation------------------------------------------------------------
+1)Module Definition and Inputs/Outputs:
+The Task2 module is defined with inputs for two 4-bit signals (x and y) and a 1-bit select signal (s). Outputs include a 4-bit signal (m) and a 4-bit LED output (LED).
+
+2)Multiplexer Logic:
+The multiplexer logic is implemented using a conditional (ternary) operator. If the select signal (s) is 1, the output (m) is assigned the value of x. Otherwise, the output (m) is assigned the value of y.
+
+3)LED Control:
+The LED output (LED) is set to zero, meaning all LEDs are turned off.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+KEYWORDS:
+
+Verilog HDL
+Multiplexer
+2-to-1 MUX
+Digital Logic Design
+FPGA Projects
+DE1 SOC Board
+Digital Electronics
+Embedded Systems
+Hardware Design
+RTL Design
+IC Testability
+Computer Architecture

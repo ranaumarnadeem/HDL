@@ -1,0 +1,44 @@
+Introduction
+A Digital Clock is a common application of digital circuits, displaying time using a combination of counters and display decoders. In this example, we will use Verilog to implement a digital clock that counts seconds using BCD (Binary-Coded Decimal) counters and displays the count on 7-segment displays.
+
+The provided code consists of multiple modules: 
+-a clock divider to generate a one-second pulse
+-a BCD counter to count the seconds
+-a BCD to 7-segment decoder to display the count.
+
+---------------------------------------------------------Code Explanation-------------------------------------------------------------------------------------------
+1)Module Definition and Inputs/Outputs:
+The top_module is defined with inputs for the clock and reset signal. Outputs include signals for the 7-segment displays to show the BCD count.
+
+2)Clock Divider:
+The clock_divider module takes the input clock signal and divides it to generate a one-second pulse. This pulse is used to increment the BCD counters.
+
+3)BCD Counter:
+The bcd_counter module consists of three mod10_counter instances to count the BCD digits. Each counter rolls over after counting from 0 to 9 and triggers the next counter.
+
+4)7-Segment Display Decoding:
+The bcd_to_7segment module converts each 4-bit BCD digit into the corresponding 7-segment display pattern. The decoded outputs are used to drive the 7-segment displays.
+
+5)Rollover Handling:
+Each mod10_counter has a rollover output that triggers the next counter in the chain, ensuring proper counting across multiple digits.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Keywords:
+Verilog HDL
+Digital Clock
+BCD Counter
+7-Segment Display
+Clock Divider
+Verilog Code Example
+FPGA Projects
+DE1 SOC Board
+Digital Electronics
+Embedded Systems
+Hardware Design
+RTL Design
+IC Testability
+Computer Architecture
+
+
+
+
+

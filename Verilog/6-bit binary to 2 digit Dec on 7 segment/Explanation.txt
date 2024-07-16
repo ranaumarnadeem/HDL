@@ -1,0 +1,20 @@
+Introduction
+
+A Binary to BCD (Binary-Coded Decimal) converter is a digital circuit that converts a binary number into its equivalent BCD representation. BCD is useful in displaying numbers on digital displays like 7-segment displays, which are commonly used in clocks, counters, and other digital devices. This example demonstrates how to convert a 6-bit binary input into BCD and display it on two 7-segment displays.
+
+------------------------------------------Code Explanation----------------------------------------------------------------
+1)Module Definition and Inputs/Outputs:
+The top_module takes a 6-bit binary input (SW) and outputs the corresponding BCD representation on two 7-segment displays (HEX1 for tens and HEX0 for ones).
+
+2)Binary to BCD Conversion:
+
+The bin_to_bcd module converts the 6-bit binary input into two 4-bit BCD digits (bcd_ones and bcd_tens).
+It uses a shift-and-add-3 algorithm, which involves checking if each BCD digit (tens and ones) is greater than or equal to 5, and if so, adding 3 to adjust the value before shifting left by one bit.
+
+3)7-Segment Display Decoding:
+
+The seg7_decoder module converts each 4-bit BCD digit into the corresponding 7-segment display pattern.
+It uses a case statement to map each BCD digit (0-9) to its 7-segment display representation.
+
+--------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,30 @@
+Introduction:
+
+A Decimal to Binary Converter is a digital circuit that converts a decimal (base-10) number into its equivalent binary (base-2) representation. This is a fundamental operation in digital electronics because binary numbers are the basis of all digital circuits and computing systems.
+
+In this example, we will look at a Verilog code that takes two 4-bit Binary-Coded Decimal (BCD) inputs (representing decimal digits) and displays the results on 7-segment displays. The code handles the addition of these two BCD digits, adjusts for BCD format, and displays the results.
+
+----------------------------------------------------------Code Explanation---------------------------------------------------------------------------------------------
+1)Module Definition and Inputs/Outputs:
+The top_module is defined with inputs for two BCD digits and a carry-in signal. Outputs include signals for 7-segment displays and error indication LEDs.
+
+2)Internal Wires and Variables:
+Internal wires are used to hold the BCD inputs, carry-in, and the sum of the BCD digits.
+
+3)Input Validation:
+The code checks if the BCD inputs are valid (i.e., within the range 0-9). If any input is invalid, an error signal is set.
+
+4)4-bit Adder:
+A 4-bit adder is used to calculate the sum of the two BCD inputs and the carry-in. The result can be up to 5 bits to accommodate the carry-out.
+
+5)Handling Sum Greater Than 9:
+If the sum exceeds 9, the code adjusts the result by subtracting 10 and sets the appropriate carry-out bit. This ensures the result is a valid BCD digit.
+
+6)BCD Digit Assignment:
+The adjusted sum is split into two BCD digits: a higher digit (most significant) and a lower digit (least significant).
+
+7) 7-Segment Display Decoding:
+The seg7_decoder module converts each 4-bit BCD digit into the corresponding 7-segment display pattern. The decoded outputs are used to drive the 7-segment displays for both the inputs and the sum.
+
+8)Error Handling:
+If any BCD input is invalid, an error indicator LED is lit. Additionally, the sum and carry-out are displayed using LEDs.
