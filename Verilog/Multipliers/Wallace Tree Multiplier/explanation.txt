@@ -1,0 +1,9 @@
+The Wallace Tree multiplier starts with generating the partial products. For two 4-bit numbers, 'a' and 'b', this involves calculating the AND operation for each pair of bits from 'a' and 'b'. This forms a 4x4 matrix of partial products.
+
+The next step involves the first layer of reduction. In this layer, we add the partial products in pairs using full adders. For instance, the sum and carry outputs of the first pair of partial products are calculated and stored. This process is repeated for the rest of the partial products. The carries from these additions are propagated to the next level of reduction.
+
+In the second layer of reduction, the sums from the first layer are added along with the carries from the first layer. Again, full adders are used to handle these additions, and the results are stored as sums and new carries.
+
+The third layer of reduction follows the same pattern. Sums from the second layer are added along with their carries, using full adders.
+
+Finally, the results from the third layer of reduction are combined to form the final product of the multiplication. This result is an 8-bit binary number representing the product of the two 4-bit input numbers. 

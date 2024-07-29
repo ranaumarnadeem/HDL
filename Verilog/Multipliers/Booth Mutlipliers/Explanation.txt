@@ -1,0 +1,11 @@
+Firstly we define the inputs multiplicand and multiplier as 4-bit signed numbers, and the output product as an 8-bit signed number to hold the result. Here we use three registers: A, S, and P for intermediate values. The register A is created by concatenating the multiplicand with four zeros, while S is formed by concatenating the negated multiplicand with four zeros. The register P is initialized by concatenating four zeros with the multiplier. Additionally, a count register is set to 4, corresponding to the number of bits in the multiplier.
+
+The main loop of the algorithm runs for four iterations, corresponding to the number of bits in the multiplier. During each iteration, the last two bits of P (P[1:0]) are examined to determine the appropriate action:
+
+If the last two bits are 01, the value of A is added to P.
+If the last two bits are 10, the value of S is added to P.
+If the last two bits are 00 or 11, no addition is performed.
+
+After examining and modifying P based on its last two bits, the algorithm performs an arithmetic right shift on P. This shift operation is crucial as it effectively divides the current value by two, preparing P for the next iteration of addition and bit examination. The count register is decremented by one after each iteration to keep track of the number of remaining bits to be processed.
+
+After completing the loop, the final value of P contains the product of the multiplication. This value is then assigned to the product output register. 
