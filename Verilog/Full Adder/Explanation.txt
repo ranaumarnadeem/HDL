@@ -1,8 +1,0 @@
-This is a 4-bit adder using a chain of full adders, where each full adder is responsible for adding individual bits of two 4-bit numbers along with a carry-in. The resulting sum and carry-out are computed and output.
-
-The top_module is the primary module, which accepts two 4-bit inputs (a and b) and a carry-in (ci). It outputs a 4-bit sum. The module instantiates four fulladder modules, each responsible for calculating one bit of the sum and carry-out. The full adders are connected in a chain, where each full adder's carry-out is fed as the carry-in to the next higher bit's full adder.
-
-The fulladder module performs the addition of three inputs: two data bits (a and b) and a carry-in (ci). It calculates the sum and carry-out. The fulladder uses a mux module to determine the sum based on the carry-in and the norout1 signal, which is derived from a NOR operation on the input bits.
-
-The mux module is a 2-to-1 multiplexer that selects between two inputs based on a control signal. In this case, it selects between the b input and the ci input based on the sig signal, which is derived from the norout1 output of the fulladder.
-
