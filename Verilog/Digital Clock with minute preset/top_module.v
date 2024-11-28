@@ -28,7 +28,7 @@ always @(posedge CLOCK_50) begin
     end
 end
 
-// Control logic for start/stop
+// start/stop logic
 always @(posedge CLOCK_50) begin
     if (~KEY0) begin
         running <= 0;
